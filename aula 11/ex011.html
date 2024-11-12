@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body, html {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+        }
+
+        h1 {
+            padding: 10px;
+            text-align: center;
+        }
+
+        div#container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        p {
+            padding: 10px;
+        }
+
+        #txtn {
+            height: 10px;
+            width: 100px; /* Largura do campo */
+            padding: 10px; /* Espaço interno */
+            font-size: 16px; /* Tamanho da fonte */
+            border: 2px solid black; /* Cor da borda */
+            border-radius: 5px; /* Arredondamento dos cantos */
+            outline: none; /* Remove o contorno azul padrão */
+            transition: all 0.3s ease; /* Transição para o efeito de foco */
+        }
+        
+        #txtn:focus {
+            border-color: black; /* Cor da borda ao focar */
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.384); /* Sombra ao focar */
+        }
+
+        input[type ="button"] {
+            height: 35px;
+            padding: 10px 10px 10px 10px;
+            margin: 10px;
+            color: black;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type ="button"]:hover {
+            background-color: black; /* Cor da borda ao focar */
+            color: white;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.384); /* Sombra ao focar */
+        }
+
+        div#res {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    <div id="container">
+        <p>Qual seu país de origem? </p> <input type="text" name="txtn" id="txtn">
+        <input type="button" value="Checar" onclick="consultar()">
+        </div>
+        <div id="res">
+        
+    </div>
+    <script>
+        function consultar(){
+        var pais = document.getElementById('txtn')
+        var Brasil = ('Brasil')
+        var n = (pais.value)
+        var res = document.getElementById('res')
+        res.innerHTML = `Você tem a nacionalidade do(a) ${n}`
+
+        if (n.toLowerCase()=== 'brasil') {
+            res.innerHTML += `<p>Você é <strong>Brasileiro</strong></p>`
+        }else {
+            res.innerHTML += `<p>Você é <strong>estrangeiro</strong></p>`
+        }
+        }
+    </script>
+</body>
+</html>
