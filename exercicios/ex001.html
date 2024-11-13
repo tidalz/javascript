@@ -1,0 +1,56 @@
+  <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Verificador de idade</h1>
+    <div id="container">
+        <div id="item">
+            <div id="contano">
+                Ano de nascimento: <input type="number" name="ano" id="ano"> <br>
+            </div>
+            <div id="consexo">
+                Sexo: <input type="radio" name="sexo" id="masc">
+                <label for="masc">Masculino</label>
+                <input type="radio" name="sexo" id="fem" >
+                <label for="fem">Feminino</label> <br>
+                <input type="button" id="botao" value="Verificar"  onclick="calcular()">
+            </div>
+        <div id="res">
+    </div>
+    <div id="imagem">
+        <img id="foto" src="" alt="Imagem de perfil" style="display: none;">
+    </div>
+    <script>
+        function calcular() {
+            var ano = document.getElementById('ano').value;
+            var res = document.getElementById('res');
+            var anoAtual = new Date().getFullYear();
+            var idade = anoAtual - Number(ano)
+            var foto = document.getElementById('foto')
+
+            var sexo;
+                if (document.getElementById('masc').checked) {
+                    sexo = 'Masculino';
+                    foto.src = 'imagens/homem.jpg'
+            } else if (document.getElementById('fem').checked) {
+                sexo = 'Feminino';
+                foto.src = 'imagens/mulher.jpg'
+            }
+
+            if (ano === '' || isNaN(ano) || ano > anoAtual) {
+                res.innerHTML = "Insira um ano de nascimento válido.";
+            } else if (!sexo) {
+                res.innerHTML = "Por favor, selecione o sexo.";
+            } else {
+               res.innerHTML = `Sua idade é de ${idade} anos e seu sexo é ${sexo}.`;
+               foto.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
