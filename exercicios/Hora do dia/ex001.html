@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+        <header>
+            <h1>Hora do dia</h1>
+        </header>
+        <section>
+            <div id="container">
+                <p id="horario"></p>
+                <div id="foto">
+                    <img id="dia" src="imagens/dia.jpg" alt="dia" style="display: none;">
+                    <img id="noite" src="imagens/noite.jpg" alt="tarde" style="display: none;">
+                    <img id="tarde" src="imagens/tarde.jpg" alt="noite" style="display: none;">
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; CursoemVídeo</p>
+        </footer>
+    <script>
+        var agora = new Date()
+        var hora = agora.getHours()
+        var dia = document.getElementById('dia')
+        var noite = document.getElementById('noite')
+        var tarde = document.getElementById('tarde')
+        var container = document.getElementById('container')
+        var body = document.getElementById('body')
+        var horario = document.getElementById('horario')
+
+        horario.innerHTML = `Agora são ${hora} horas.`
+
+        if (hora >= 6 && hora < 12) {
+            dia.style.display = 'block'
+            body.style.backgroundColor = 'rgb(70,132,236)'
+        } else if (hora >= 12 && hora < 18){
+            tarde.style.display = 'block'
+            body.style.backgroundColor = '#b9846f'
+        } else {
+            noite.style.display = 'block'
+            body.style.backgroundColor = '#515154'
+        }
+    </script>
+</body>
+</html>

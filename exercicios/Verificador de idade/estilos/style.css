@@ -30,7 +30,7 @@ div#container {
     margin: auto;
     background-color: white;
     width: 600px;
-    height: 500px;
+    height: 200px;
 }
 
 div#contano {
@@ -55,6 +55,7 @@ input#botao {
     margin-top: 20px;
     padding: 3px;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
 }
 
 input#botao:hover {
@@ -70,8 +71,14 @@ div#res {
     position: relative;
 }
 
-div#imagem {
-    position: relative;
+div#rodape {
+    margin-top: 10px;
+    text-align: center;
+}
+
+div#rodape p {
+    padding: 5px;
+    font-size: 1.5em;
 }
 
 img#foto {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificador de idade</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
     <h1>Verificador de idade</h1>
@@ -25,6 +25,9 @@
     <div id="imagem">
         <img id="foto" src="" alt="Imagem de perfil" style="display: none;">
     </div>
+    <div id="rodape">
+        <p>Preencha os dados acima para ver o resultado!</p>
+    </div>
     <script>
         function calcular() {
             var ano = document.getElementById('ano').value;
@@ -32,6 +35,8 @@
             var anoAtual = new Date().getFullYear();
             var idade = anoAtual - Number(ano)
             var foto = document.getElementById('foto')
+            var rodape = document.getElementById ('rodape')
+            var container = document.getElementById ('container')
 
             var sexo;
                 if (document.getElementById('masc').checked) {
@@ -50,6 +55,11 @@
                res.innerHTML = `Sua idade é de ${idade} anos e seu sexo é ${sexo}.`;
                foto.style.display = 'block'
             }
+
+            rodape.style.display = 'none'
+            container.style.height = '500px'
+
+
         }
     </script>
 </body>
