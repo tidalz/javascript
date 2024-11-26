@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicío de repetição</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    <section>
+        <div>
+            Início: 
+            <input type="number" name="start" id="istart">
+            <br>
+
+            Fim:
+            <input type="number" name="end" id="iend">
+            <br>
+
+            Passo:
+            <input type="number" name="passo" id="ipasso">
+            <br>
+
+            <input type="button" value="Contar" onclick="calcular()">
+        </div>
+        <div id="res">
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+    <script>
+        function calcular() {
+        var passo = document.getElementById('ipasso').value;
+        var end = document.getElementById('iend').value;
+        var start = document.getElementById('istart').value;
+        var res = document.getElementById('res')
+
+        passo = Number(passo)
+        end = Number(end)
+        start = Number(start)
+
+        if (isNaN(start) || isNaN(end) || isNaN(passo) || passo <= 0) {
+            res.innerHTML = 'Por favor, insira valores válidos. O passo deve ser maior que zero.'
+            return;
+        }
+        
+        res.innerHTML = 'Contando: <br>'
+        
+        if (start < end) {
+        for (var i = start; i <= end; i += passo){
+            res.innerHTML += `${i} &#x1F449; `
+        }
+        } else {
+            for (var i = start; i >= end; i -= passo) {
+                res.innerHTML += `${i} &#x1F449; `
+            }
+        }
+        res.innerHTML += `&#x1F3C1;`
+        }
+    </script>
+</body>
+</html>
