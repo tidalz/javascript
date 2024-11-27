@@ -8,16 +8,40 @@
 </head>
 <body>
     <header>
-        <h1>Vamos contar</h1>
+        <h1>Tabuada</h1>
     </header>
     <section>
         <div>
+            Número: 
+            <input type="number" name="num" id="inum">
+
+            <input type="button" value="Gerar Tabuada" onclick="calcular()">
         </div>
-        <div>
+        <div id="res">
         </div>
     </section>
     <footer>
         <p>&copy; CursoemVídeo</p>
     </footer>
+    <script>
+        function calcular() {
+            var num = document.getElementById('inum').value
+            var res = document.getElementById('res')
+            num = Number(num)
+
+            res.innerHTML = ``;
+
+            if (isNaN(num)) {
+                res.innerHTML = 'Por favor, insira um número válido.'
+            return;
+            }
+
+            for (var tab = 1; tab <= 10; tab ++) {
+                var linha = document.createElement('p');
+                linha.textContent = `${num} x ${tab} = ${num * tab}`;
+                res.appendChild(linha);
+            }
+        }
+    </script>
 </body>
 </html>

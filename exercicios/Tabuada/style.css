@@ -9,10 +9,12 @@ header {
 }
 
 section {
+    display: block;
     background: white;
     border-radius: 10px;
     padding: 15px;
-    width: 500px;
+    width: 370px;
+    height: 400px;
     margin: auto;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, .363);
 }
@@ -21,4 +23,22 @@ footer {
     color: white;
     text-align: center;
     font-style: italic;
+}
+
+div#res {
+    font-size: 1.2em; /* Tamanho menor para caber mais conteúdo */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Itens organizados em coluna */
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 370px; /* Largura fixa */
+    height: 360px; /* Altura fixa */
+    background-color: #f4f4f4; /* Fundo cinza claro */
+    border: 1px solid #ccc; /* Borda cinza */
+    padding: 0px; /* Espaço interno */
+    text-align: center;
+    line-height: 0.5; /* Reduz o espaçamento entre as linhas */
+    box-sizing: border-box; /* Inclui bordas e padding no tamanho total */
+    border-radius: 10px;
 }
