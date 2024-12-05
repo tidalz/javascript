@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +27,7 @@
             <input id="button" type="button" value="Contar" onclick="calcular()">
         </div>
         <div id="res">
+            Preparando a contagem...
         </div>
     </section>
     <footer>
@@ -51,10 +52,12 @@
         res.innerHTML = 'Contando: <br>'
         
         if (start < end) {
+            //contagem crescente
         for (var i = start; i <= end; i += passo){
             res.innerHTML += `${i} &#x1F449; `
         }
         } else {
+            //contagem regressiva
             for (var i = start; i >= end; i -= passo) {
                 res.innerHTML += `${i} &#x1F449; `
             }
